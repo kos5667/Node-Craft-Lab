@@ -1,2 +1,5 @@
 # IntelliJ
 /.idea/*
+
+# package-lock.json
+./package-lock.json
