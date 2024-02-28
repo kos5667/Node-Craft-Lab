@@ -1,0 +1,15 @@
+{
+  "name": "node-craft-lab",
+  "version": "1.0.0",
+  "description": "*Node.js, Express, Javascript를 이용하여 다양한 기술들은 연구하는 공간.*",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
