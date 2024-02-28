@@ -15,7 +15,23 @@
 
 ### 📌 진행 사항
 
-|                     Title                     |                Contents                 |
-| :-------------------------------------------: | :-------------------------------------: |
-| [**Create Project**](./doc/Create Project.md) | Node.js와 Express를 이용한 Project생성. |
+---
 
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th>제목</th>
+            <th>설명</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="./doc/Create Project.md"><strong>Create Project</strong></a></td>
+            <td>Node.js와 Express를 이용한 Project생성.</td>
+        </tr>
+        <tr>
+            <td><a href="#"><strong>#</strong></a></td>
+            <td></td>
+        </tr>
+	</tbody>
+</table>
