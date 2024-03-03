@@ -50,4 +50,4 @@
 ### 📌 참고 사항
 
 - [TDD, BDD, DDD란?](https://github.com/kos5667/Document/blob/main/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EA%B0%9C%EB%B0%9C%20%EB%B0%A9%EB%B2%95%EB%A1%A0/TDD%2CBDD%2CDDD%3F.md)
-- 
+- [Chai 사용법.](./doc/Chai사용법.md)
