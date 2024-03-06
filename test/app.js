@@ -9,7 +9,7 @@ const options = {
 
 // Mocha Test files.
 const files = [
-    './test/example/exampleTest.js',
+    './test/example/mocha_test.js',
     './test/example/chai_test.js',
 ]
 

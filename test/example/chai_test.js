@@ -39,7 +39,6 @@ import('chai').then(mod => {
         function throwsError() {
             throw new Error('An error occurred');
         }
-
         describe('Exception Test', function() {
             it('should throw an error', function() {
                 expect(throwsError).to.throw(Error, 'An error occurred');
@@ -55,6 +54,7 @@ import('chai').then(mod => {
             });
         });
 
+        // Expect 스타일 예제
         describe('Expect 스타일 예제', function() {
             it('값이 true인지 검사', function() {
                 const isTrue = true;
@@ -103,21 +103,6 @@ import('chai').then(mod => {
      */
     const assert = mod.assert;
     describe('### Chai Assert 스타일 예제', function() {
-        it('값이 true인지 검사', function() {
-            const isTrue = true;
-            isTrue.should.be.true;
-        });
-
-        it('객체의 속성 검사', function() {
-            const obj = { name: 'John', age: 30 };
-            obj.should.have.property('name').with.lengthOf(4);
-        });
-
-        it('배열 내 요소 검사', function() {
-            const arr = [1, 2, 3];
-            arr.should.include(2);
-            arr.should.have.members([1, 2, 3]);
-        });
     });
 
 });
