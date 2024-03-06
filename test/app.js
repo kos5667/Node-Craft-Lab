@@ -10,9 +10,7 @@ const options = {
 // Mocha Test files.
 const files = [
     './test/example/exampleTest.js',
-    './test/example/chai_test1.js',
-    './test/example/chai_test2.js',
-    './test/example/chai_test3.js',
+    './test/example/chai_test.js',
 ]
 
 function runMocha () {
