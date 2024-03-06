@@ -1,4 +1,4 @@
-// test/exampleTest1.js
+// test/chai_test1.js
 // ES 모듈 문법으로 Chai 비동기 로드
 import('chai').then(mod => {
     const expect = mod.expect;
