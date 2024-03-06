@@ -19,8 +19,6 @@ function runMocha () {
     mocha_files.forEach(fc => {
         mocha.addFile(fc);
     })
-
     mocha.run()
 }
-
 runMocha();
