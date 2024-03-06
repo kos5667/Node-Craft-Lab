@@ -8,7 +8,7 @@ import('chai').then(mod => {
      * @type {Chai.ExpectStatic}
      */
     const expect = mod.expect;
-    describe('Chai Expect 스타일 테스트', function() {
+    describe('### Chai Expect 스타일 예제', function() {
         // 기본적인 단언(assertion) 테스트
         describe('String Test', function() {
             it('should return the correct length of a string', function() {
@@ -79,7 +79,7 @@ import('chai').then(mod => {
      * @type {Chai.Should}
      */
     const should = mod.should();
-    describe('Should 스타일 예제', function() {
+    describe('### Chai Should 스타일 예제', function() {
         it('값이 true인지 검사', function() {
             const isTrue = true;
             isTrue.should.be.true;
@@ -96,4 +96,28 @@ import('chai').then(mod => {
             arr.should.have.members([1, 2, 3]);
         });
     });
+
+    /**
+     *
+     * @type {Chai.AssertStatic}
+     */
+    const assert = mod.assert;
+    describe('### Chai Assert 스타일 예제', function() {
+        it('값이 true인지 검사', function() {
+            const isTrue = true;
+            isTrue.should.be.true;
+        });
+
+        it('객체의 속성 검사', function() {
+            const obj = { name: 'John', age: 30 };
+            obj.should.have.property('name').with.lengthOf(4);
+        });
+
+        it('배열 내 요소 검사', function() {
+            const arr = [1, 2, 3];
+            arr.should.include(2);
+            arr.should.have.members([1, 2, 3]);
+        });
+    });
+
 });
