@@ -8,17 +8,17 @@ const options = {
 }
 
 // Mocha Test files.
-const mocha_files = [
+const files = [
     './test/example/exampleTest.js',
-    './test/example/chai_test1.js'
+    './test/example/chai_test1.js',
+    './test/example/chai_test2.js',
+    './test/example/chai_test3.js',
 ]
 
 function runMocha () {
     console.log('in...');
     const mocha = new Mocha(options);
-    mocha_files.forEach(fc => {
-        mocha.addFile(fc);
-    })
-    mocha.run()
+    files.forEach(fc => { mocha.addFile(fc); });
+    mocha.run();
 }
 runMocha();
