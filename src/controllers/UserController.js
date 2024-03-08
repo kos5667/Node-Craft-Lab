@@ -1,3 +1,8 @@
+/**
+ *
+ * @param UserService
+ * @return {{createUser: ((function(*, *): Promise<void>)|*)}}
+ */
 module.exports = (UserService) => {
     const createUser = async (req, res) => {
         try {
