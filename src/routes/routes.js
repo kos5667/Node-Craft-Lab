@@ -5,17 +5,15 @@
 const express = require('express');
 const router = express.Router();
 const {
-    RoomController,
-    UserController
+    RoomControllerInstance
 } = require('../controllers/index');
-
 // Management User.
-const UserRoutes = require('./UserRoutes')(UserController, router);
+// const UserRoutes = require('./UserRoutes')(UserController, router);
 // Management Room.
-const RoomRoutes = require('./RoomRoutes')(RoomController, router);
+const RoomRoutes = require('./RoomRoutes')(RoomControllerInstance, router);
 
 module.exports = (app) => {
-    app.use('/api/users', UserRoutes);
+    // app.use('/api/users', UserRoutes);
     app.use('/api/rooms', RoomRoutes);
     app.get('/', (req, res) => { res.send('Hello World!'); });
 
