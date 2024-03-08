@@ -1,31 +1,27 @@
+const {RoomServiceInstance} = require("../services");
+
 /**
  * RoomController
- * @param RoomService
- * @return {{createRoom: ((function(*, *): Promise<void>)|*)}}
  */
-// const RoomService = require('../services/RoomService')
-//
-//
-// exports.testFn = function  (req, res) {
-// }
+/** @type {RoomService} */
+let RoomService = null;
+class RoomController {
 
-module.exports = (RoomService) => {
-    const createRoom = async (req, res) => {
-        console.log('[RoomController]')
+    constructor(RoomServiceInstance) {
+        this.RoomService = RoomServiceInstance
+    }
 
+    createRoom = async (req, res) => {
+        console.log('in... RoomController!!!')
         try {
-            await RoomService.createRoom(req, res);
-            const newRoom = await RoomService.createRoom(req.body);
+            console.log(this);
+            const newRoom = await this.RoomService.createRoom('go!!');
+            // const newRoom = await RoomService.createRoom();
             res.status(201).send(newRoom);
         } catch (error) {
+            console.error(error.message);
             res.status(400).send(error.message);
         }
-    };
-
-    // 추가 컨트롤러 메서드 정의
-
-    return {
-        createRoom
-        // 기타 메서드 반환
-    };
-};
+    }
+}
+module.exports = RoomController;
