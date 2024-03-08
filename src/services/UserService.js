@@ -1,7 +1,8 @@
 module.exports = (UserModel) => {
     const createUser = async (userData) => {
-        const user = new UserModel(userData);
-        return await user.save();
+        // const user = new UserModel(userData);
+        // return await user.save();
+        console.log('in....UserService...')
     };
 
     // 추가 서비스 메서드 정의
