@@ -1,16 +1,11 @@
-const express = require('express');
-const router = express.Router();
-
-// const RoomController = require('../controllers/RoomController');
 /**
  *
- * @param RoomController
- * @return {Router}
+ * @param {RoomController} roomController
+ * @param {Router} router
+ * @return {*}
  */
-module.exports = (RoomController) => {
-    // router.get('/createRoom', (req, res) => { RoomController.createRoom(req, res) });
-
+module.exports = (roomController, router) => {
+    router.get('/createRoom', roomController.createRoom);
     // 추가 라우트 설정
-
     return router;
 };
