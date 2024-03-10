@@ -3,7 +3,9 @@
  */
 class CoreInterface {
     constructor(fnNm) {
-        this.userService = new (require('../services/UserService'))();
+        this.userService = new (require('../services/RoomService'))();
+        this.roomService = new (require('../services/RoomService'))();
+
         console.log('[NODE Initialize Class]', fnNm)
     }
 
