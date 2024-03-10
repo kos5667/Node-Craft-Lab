@@ -12,3 +12,15 @@ module.exports = (UserModel) => {
         // 기타 메서드 반환
     };
 };
+
+
+class UserService {
+
+    constructor() {
+    }
+
+    createUser = async (userData) => {
+        return `createUser : ${userData}`;
+    };
+}
+module.exports = UserService;

@@ -1,9 +1,15 @@
+const CoreInterface = require("../config/CoreInterface");
+
 /**
  * RoomService
  */
-class RoomService {
+class RoomService extends CoreInterface {
 
     constructor() {
+        super('RoomService');
+
+        const ns = this.userService.createUser('test');
+        console.log(ns);
         console.log('RoomService constructor!!')
     }
 
