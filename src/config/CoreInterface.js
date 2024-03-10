@@ -1,17 +1,25 @@
-const HealthCheck = require("./HealthCheck");
-const ExampleClass = require("./ExampleClass");
-
 /**
  *
  */
-class CoreInterface extends HealthCheck, ExampleClass {
-    constructor() {
-        super();
-
-        console.log('In... CoreInterface')
+class CoreInterface {
+    constructor(fnNm) {
+        this.userService = new (require('../services/UserService'))();
+        console.log('[NODE Initialize Class]', fnNm)
     }
 
-    init() {
+    async health_check() {
+    }
+
+    async init() {
+    }
+
+    // get userService () { return this.userService };
+
+    /**
+     * binding class
+     * @return {Promise<void>}
+     */
+    binding = async () => {
 
     }
 }
