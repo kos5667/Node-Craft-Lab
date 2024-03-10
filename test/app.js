@@ -20,7 +20,7 @@ const options = {
  * @type {string[]}
  */
 const mocha_files = [
-    // DONT_REMOVE,
+    DONT_REMOVE,
     /**
      * chai 사용 시 최초 "import('chai')"가 생성되기 전
      * (describe -> it)이 실행돼야 'chai'도 정상 실행됨.
