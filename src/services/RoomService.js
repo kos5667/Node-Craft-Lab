@@ -3,14 +3,9 @@ const CoreInterface = require("../config/CoreInterface");
 /**
  * RoomService
  */
-class RoomService extends CoreInterface {
+class RoomService {
 
     constructor() {
-        super('RoomService');
-
-        const ns = this.userService.createUser('test');
-        console.log(ns);
-        console.log('RoomService constructor!!')
     }
 
     createRoom = async (roomData) => {
@@ -18,7 +13,7 @@ class RoomService extends CoreInterface {
     }
 
     updateRoom = async (roomData) => {
-        return 'RoomService ok!'
+        return 'Update RoomService ok!'
     }
 }
 module.exports = RoomService;
