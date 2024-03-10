@@ -13,11 +13,11 @@ class RoomService extends CoreInterface {
         console.log('RoomService constructor!!')
     }
 
-    async createRoom(roomData) {
+    createRoom = async (roomData) => {
         return 'RoomService ok!'
     }
 
-    async updateRoom(roomData) {
+    updateRoom = async (roomData) => {
         return 'RoomService ok!'
     }
 }
