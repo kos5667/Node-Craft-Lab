@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "nodemon app.js --mocha"
+    "test": "nodemon app.js --mocha",
+    "mocha": "mocha"
   },
   "keywords": [],
   "license": "ISC",
