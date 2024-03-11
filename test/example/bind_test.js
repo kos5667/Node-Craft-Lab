@@ -13,15 +13,24 @@ import('chai').then(mod => {
 
     describe('## Binding Test', function() {
         describe('Room --->', function() {
-            it('Call API Room Fn => createRoom', async function () {
+            it('Call API Room => [createRoom]', async function () {
                 const response = await axios.get(`${ROOM_HOST}/createRoom`);
-                console.log(response.data);
+                expect(response.data).not.null;
+            });
+
+            it('Call API Room => [updateRoom]', async function () {
+
             });
         })
 
         describe('User --->', function() {
-            it('expect ', () => {
-                // expect('ee').to.be.a(numbers);
+            it('Call API User => [createUser] ', () => {
+            });
+
+            it('Call API User => [updateUser] ', () => {
+            });
+
+            it('Call API User => [deleteUser] ', () => {
             });
         })
     })

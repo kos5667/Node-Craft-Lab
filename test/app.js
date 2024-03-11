@@ -1,5 +1,6 @@
 /*****************************************
  * Test 자동화.
+ * API Test는 서버가 기동되고 있어야 함으로 'node app.js --mocha'를 이용한 Mocha Test 진행.
  *****************************************/
 const Mocha = require('mocha')
     , async = require('async');

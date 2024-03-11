@@ -2,16 +2,56 @@
 const express = require('express');
 const async = require('async');
 const mongoose = require('mongoose');
+const winston = require('winston');
+require("dotenv").config({debug: true});
+
 
 /** Constant */
 const PORT = process.env.PORT || 3000;
 
 async.waterfall([
+
+    function (callback) {
+        console.info('┌────────────────────────────────────────────────────────┐')
+        console.info('│               Server is up and running!!               │')
+        console.info('└────────────────────────────────────────────────────────┘')
+        callback(null);
+    },
+    /**
+     * Initialize Winston.
+     * @param callback
+     */
+    function (callback) {
+        callback(null);
+    },
+    /**
+     *
+     * @param callback
+     */
+    function loadConfiguration(callback) {
+        // console.log('process', process.env);
+
+        callback(null);
+    },
+    /**
+     * load command parameter.
+     * @param callback
+     */
+    function loadCommandParameter (callback) {
+        global.options = {};
+        for (let i = 2; i < process.argv.length; i++) {
+            switch (process.argv[i]) {
+                case '--mocha': global.options.runMocha = true; break;
+                default:
+                    break;
+            }
+        }
+        callback(null);
+    },
     /**
      * set global data.
      */
     function setGlobalData(callback) {
-        global.runMocha = false;
         callback(null);
     },
     /**
@@ -49,7 +89,6 @@ async.waterfall([
         const app = express();
         require('./routes/routes')(app);
 
-
         app.listen(PORT, () => {
             console.log(`Example app listening at http://localhost:${PORT}`);
         });
@@ -73,5 +112,10 @@ async.waterfall([
         throw `Failed to initialize application: ${err}`;
     }
 
-    console.log('end...')
+    if (global.options.runMocha) {
+        console.info('┌────────────────────────────────────────────────────────┐')
+        console.info('│                  Mocha Test Start!!!!                  │')
+        console.info('└────────────────────────────────────────────────────────┘')
+        require('../test/app')
+    }
 });
