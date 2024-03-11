@@ -13,13 +13,15 @@ import('chai').then(mod => {
 
     describe('## Binding Test', function() {
         describe('Room --->', function() {
-            it('Call API Room Fn => createRoom', function () {
-                // axios.get(`${ROOM_HOST}/createRoom`)
-                //     .then((r) => {
-                //         console.log('in...', r.data);
-                //         expect(r.data).to.null(null);
-                //         assert.isNull(r.data);
-                //     });
+            it('Call API Room Fn => createRoom', async function () {
+                const response = await axios.get(`${ROOM_HOST}/createRoom`);
+                console.log(response.data);
+            });
+        })
+
+        describe('User --->', function() {
+            it('expect ', () => {
+                // expect('ee').to.be.a(numbers);
             });
         })
     })
