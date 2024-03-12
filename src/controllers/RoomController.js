@@ -11,9 +11,9 @@ class RoomController extends CoreInterface {
      */
     constructor(RoomService) {
         super('RoomService');
+        this.RoomService = RoomService;
 
-        console.log(this.roomService.updateRoom())
-        // this.RoomService = RoomService;
+        // this.roomService.updateRoom()
     }
 
     createRoom = async (req, res) => {

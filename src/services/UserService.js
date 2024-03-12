@@ -8,8 +8,6 @@ class UserService extends CoreInterface  {
 
     constructor(UserModel) {
         super('UserService');
-
-        console.log(this.roomService.createRoom(''));
     }
 
     createUser = async (userData) => {
