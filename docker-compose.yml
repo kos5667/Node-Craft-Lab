@@ -9,6 +9,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root
     ports:
       - "27017:27017"
+    networks:
+          - craft-lab
     volumes:
       - mongodb_data:/data/db
 
@@ -24,6 +26,12 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongodb
     ports:
       - "8081:8081"
+    networks:
+      - craft-lab
 
 volumes:
   mongodb_data:
+
+networks:
+  craft-lab:
+    driver: bridge
