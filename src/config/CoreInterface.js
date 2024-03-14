@@ -11,12 +11,18 @@ class CoreInterface {
         this.roomService = new (require('../services/RoomService'))();
 
         console.log('[NODE Initialize Class]', fnNm)
+
+        this.#health_check()
+            .then(r => {})
+            .catch(err => {});
     }
 
-    async health_check() {
+    async #health_check() {
+
+
     }
 
-    async init() {
+    async #init() {
     }
 
     // get userService () { return this.userService };

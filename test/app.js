@@ -1,6 +1,6 @@
 /*****************************************
- * Test 자동화.
- * API Test는 서버가 기동되고 있어야 함으로 'node app.js --mocha'를 이용한 Mocha Test 진행.
+ * MochaTest 자동화.
+ * @description API Test는 서버가 기동되고 있어야 함으로 'node app.js --mocha'를 이용한 Mocha Test 진행.
  *****************************************/
 const Mocha = require('mocha')
     , async = require('async');
@@ -25,10 +25,7 @@ const options = {
  */
 const mocha_files = [
     // 주석 및 삭제 금지. 'DONT_REMOVE'
-    // ============================
     DONT_REMOVE,
-    // ============================
-
     // './test/example/mocha_test.js',
     // './test/example/chai_test.js',
     './test/example/bind_test.js',

@@ -1,6 +1,5 @@
 const CoreInterface = require("../config/CoreInterface");
 
-
 /**
  * UserService
  */
