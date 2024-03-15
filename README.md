@@ -79,8 +79,8 @@
             <td>-</td>
         </tr>
         <tr>
-            <td><a href="#"><strong>#</strong></a></td>
-            <td>#</td>
+            <td><a href="./doc/10_winston_사용법.md"><strong>winston 사용법</strong></a></td>
+            <td>winston을 활용한 Logging</td>
             <td>-</td>
         </tr>
         <tr>
