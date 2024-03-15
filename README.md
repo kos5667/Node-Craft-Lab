@@ -89,6 +89,11 @@
             <td>-</td>
         </tr>
         <tr>
+            <td><a href="./doc/12_즉시_실행_함수_표현식.md"><strong>즉시 실행 함수 표현식</strong></a></td>
+            <td>Function 표현식</td>
+            <td>-</td>
+        </tr>
+        <tr>
             <td><a href="#"><strong>#</strong></a></td>
             <td>#</td>
             <td>-</td>
