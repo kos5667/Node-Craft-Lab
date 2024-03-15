@@ -74,6 +74,21 @@
             <td>-</td>
         </tr>
         <tr>
+            <td><a href="./doc/09_dotenv_사용법.md"><strong>dotenv 사용법</strong></a></td>
+            <td>Dotenv로 서버 환변 세팅.</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td><a href="#"><strong>#</strong></a></td>
+            <td>#</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td><a href="#"><strong>#</strong></a></td>
+            <td>#</td>
+            <td>-</td>
+        </tr>
+        <tr>
             <td><a href="#"><strong>#</strong></a></td>
             <td>#</td>
             <td>-</td>
