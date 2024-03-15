@@ -84,8 +84,8 @@
             <td>-</td>
         </tr>
         <tr>
-            <td><a href="#"><strong>#</strong></a></td>
-            <td>#</td>
+            <td><a href="./doc/11_비동기_작업.md"><strong>비동기 작업</strong></a></td>
+            <td>Callback vs Promise vs Async/Await</td>
             <td>-</td>
         </tr>
         <tr>
