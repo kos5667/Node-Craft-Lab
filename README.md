@@ -37,7 +37,7 @@
     </thead>
     <tbody>
         <tr>
-            <td><a href="doc/01_Create_Project.md"><strong>Create Project</strong></a></td>
+            <td><a href="doc/01.Create%20Project.md"><strong>Create Project</strong></a></td>
             <td>Node.js와 Express를 이용한 Project생성.</td>
             <td>-</td>
         </tr>
