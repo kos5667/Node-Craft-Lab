@@ -8,7 +8,7 @@ const router = express.Router();
 const {
     UserController,
     RoomController,
-} = require('../controllers/index');
+} = require('../controllers');
 
 const UserRoutes = require('./UserRoutes')(UserController, router);
 const RoomRoutes = require('./RoomRoutes')(RoomController, router);
