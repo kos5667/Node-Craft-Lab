@@ -5,13 +5,13 @@
   "description": "*Node.js, Express, Javascript를 이용하여 다양한 기술들은 연구하는 공간.*",
   "main": "app.js",
   "directories": {
-    "doc": "doc"
+    "doc": "../doc"
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "nodemon app.js --mocha",
-    "mocha": "mocha"
+    "dev": "../node_modules/.bin/nodemon js.server/app.js",
+    "test": "../node_modules/.bin/nodemon js.server/app.js --mocha",
+    "mocha": "../node_modules/.bin/mocha"
   },
   "keywords": [],
   "license": "ISC",
