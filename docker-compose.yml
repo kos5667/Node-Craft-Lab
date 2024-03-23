@@ -1,12 +1,11 @@
-version: '3.8'
 services:
   # MongoDB
-  mongodb:
+  mongo:
     image: mongo:latest
     container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_PASSWORD: 1234
     ports:
       - "27017:27017"
     networks:
@@ -19,15 +18,18 @@ services:
     image: mongo-express:latest
     container_name: mongo-express
     depends_on:
-      - mongodb
+      - mongo
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: root
-      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 1234
+#      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_URL: mongodb://root:1234@mongodb:27017
     ports:
       - "8081:8081"
     networks:
       - craft-lab
+#    command: /bin/sh -c "sleep 10 && docker-entrypoint.sh mongo-express"
+
 
 volumes:
   mongodb_data:
