@@ -9,9 +9,9 @@
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "../node_modules/.bin/nodemon js.server/app.js",
-    "test": "../node_modules/.bin/nodemon js.server/app.js --mocha",
-    "mocha": "../node_modules/.bin/mocha"
+    "dev": "nodemon js.server/app.js",
+    "test": "nodemon js.server/app.js --mocha",
+    "mocha": "mocha"
   },
   "keywords": [],
   "license": "ISC",

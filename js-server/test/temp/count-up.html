@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트 업</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #count {
+            font-size: 24px;
+            font-weight: bold;
+            color: navy;
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>카운트 업</h1>
+
+<div id="count">0</div>
+
+<button id="startButton" onclick="startCount()">시작</button>
+
+<script>
+    var count = 0;
+    var intervalId;
+
+    function startCount() {
+        intervalId = setInterval(incrementCount, 1000); // 매 초마다 incrementCount 함수 호출
+        document.getElementById('startButton').disabled = true; // 버튼 비활성화
+    }
+
+    function incrementCount() {
+        count++;
+        document.getElementById('count').textContent = count;
+    }
+</script>
+
+</body>
+</html>
