@@ -11,6 +11,7 @@ services:
     networks:
           - craft-lab
     volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
       - mongodb_data:/data/db
 
   # Mongo Express
