@@ -1,5 +1,4 @@
 const CoreInterface = require("../config/CoreInterface");
-
 /**
  * RoomController
  */
@@ -10,7 +9,7 @@ class RoomController extends CoreInterface {
      * @param {RoomService} RoomService
      */
     constructor(RoomService) {
-        super('RoomService');
+        super('RoomController');
         this.RoomService = RoomService;
 
         // this.roomService.updateRoom()
@@ -19,7 +18,6 @@ class RoomController extends CoreInterface {
     createRoom = async (req, res) => {
         try {
             const newRoom = await this.RoomService.createRoom('go!!');
-            console.log(this.userService.createRoom())
             res.status(201).send(newRoom);
         } catch (error) {
             console.error(error.message);
@@ -29,7 +27,7 @@ class RoomController extends CoreInterface {
 
     updateRoom = async (req, res) => {
         try {
-            const newRoom = await this.roomService.updateRoom('go!!')
+            const newRoom = await this.RoomService.updateRoom('go!!')
             res.status(201).send(newRoom);
         } catch (error) {
             console.error(error.message);
