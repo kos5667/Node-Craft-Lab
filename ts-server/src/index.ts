@@ -1,5 +1,7 @@
-import { loadEnv, AppEnv } from "./infrastructure/config/env.loader"
+import winston from 'winston';
 import { Application } from "express";
+import { loadEnv, AppEnv } from "./infrastructure/config/env.loader"
+import { InitializeLogger } from './utils/logger'
 
 interface AppContext {
     app: Application;
@@ -21,8 +23,17 @@ const steps: StepFunction[] = [
         context.env = await loadEnv();
     },
 
+    /**
+     * Initialize winston logger
+     * @param context
+     */
     async (context: AppContext) => {
-        console.log(context.env);
+        await InitializeLogger(context.env.LOG_LEVEL);
+
+        winston.debug('Initialize Logger');
+        winston.info('Initialize Logger');
+        winston.warn('Initialize Logger');
+        winston.error('Initialize Logger');
     }
 ];
 

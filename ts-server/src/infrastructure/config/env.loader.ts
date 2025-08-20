@@ -11,10 +11,6 @@ export async function loadEnv() {
 
     const { LOG_LEVEL } = process.env;
 
-    if (!LOG_LEVEL) {
-        throw new Error("LOG_LEVEL is required");
-    }
-
     return {
         LOG_LEVEL: LOG_LEVEL as AppEnv["LOG_LEVEL"],
     }
