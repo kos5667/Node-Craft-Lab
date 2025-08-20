@@ -4,6 +4,7 @@ import { loadEnv, AppEnv } from "./infrastructure/config/env.loader"
 import { InitializeLogger } from './utils/logger'
 
 interface AppContext {
+    phase: string;
     app: Application;
     env: AppEnv;
 }
@@ -11,34 +12,41 @@ interface AppContext {
 type StepFunction = (context: AppContext) => Promise<void>;
 
 const steps: StepFunction[] = [
+    /**
+     * Initialize Phase
+     */
     async (context: AppContext) => {
-        console.log('Hello World!');
+        context.phase = process.argv[3];
     },
 
     /**
      * Initialize AppEnv Config
-     * @param context
      */
     async (context: AppContext) => {
-        context.env = await loadEnv();
+        context.env = await loadEnv(context.phase);
     },
 
     /**
      * Initialize winston logger
-     * @param context
      */
     async (context: AppContext) => {
         await InitializeLogger(context.env.LOG_LEVEL);
+        winston.info('Initialize Logger Successfully.');
+    },
 
-        winston.debug('Initialize Logger');
-        winston.info('Initialize Logger');
-        winston.warn('Initialize Logger');
-        winston.error('Initialize Logger');
+    /**
+     * The Server is prepared
+     */
+    async (context: AppContext) => {
+        winston.info('╔══════════════════════════════════════╗')
+        winston.info(`║   * '🚀 Server' is UP & RUNNING! *   ║`);
+        winston.info('╚══════════════════════════════════════╝')
     }
 ];
 
 (async (): Promise<void> => {
     const context: AppContext = {
+        phase: 'local',
         app: undefined as any,
         env: undefined as any
     }

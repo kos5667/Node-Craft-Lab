@@ -6,8 +6,8 @@ export interface AppEnv {
     LOG_LEVEL: "debug" | "info" | "warn" | "error";
 }
 
-export async function loadEnv() {
-    dotenv.config({ path: path.resolve(__dirname, `../../../config/.env.local`) });
+export async function loadEnv(phase: string) {
+    dotenv.config({ path: path.resolve(__dirname, `../../../config/.env.${phase ?? 'local'}`) });
 
     const { LOG_LEVEL } = process.env;
 
