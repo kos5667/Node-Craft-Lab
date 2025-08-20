@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
   },
   "engines": {
     "node": ">=20.14.0"
@@ -25,7 +26,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.30",
+    "@types/jest": "^29.5.14",
+    "@types/express": "^5.0.3",
     "typescript": "^5.8.3",
-    "@types/jest": "^29.5.14"
+    "ts-node": "^10.9.2"
   }
 }
