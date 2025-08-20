@@ -5,5 +5,8 @@
 #
 .env
 
-#
+# js server
+
+# ts server
 /ts-server/dist/*
+#/ts-server/static/*

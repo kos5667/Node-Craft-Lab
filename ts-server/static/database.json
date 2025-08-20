@@ -1,0 +1,17 @@
+{
+    "age": 25,
+    "city": "Seoul",
+    "user": {
+        "name": "Alice",
+        "info": {
+            "age": 25,
+            "city": "Seoul"
+        }
+    },
+    "product": {
+        "info": {
+            "name": "sosooso",
+            "label": "23dfsdf"
+        }
+    }
+}

@@ -2,6 +2,7 @@ import winston from 'winston';
 import { Application } from "express";
 import { loadEnv, AppEnv } from "./infrastructure/config/env.loader"
 import { InitializeLogger } from './utils/logger'
+import { InitializeDatabase } from './infrastructure/database/JsonDB'
 
 interface AppContext {
     phase: string;
@@ -32,6 +33,13 @@ const steps: StepFunction[] = [
     async (context: AppContext) => {
         await InitializeLogger(context.env.LOG_LEVEL);
         winston.info('Initialize Logger Successfully.');
+    },
+
+    /**
+     * Initialize database
+     */
+    async (context: AppContext) => {
+        await InitializeDatabase();
     },
 
     /**
