@@ -1,12 +1,12 @@
 import winston from 'winston';
-import { Application } from "express";
+import { Express } from "express";
 import { loadEnv, AppEnv } from "./infrastructure/config/env.loader"
 import { InitializeLogger } from './utils/logger'
 import { InitializeDatabase } from './infrastructure/database/JsonDB'
 
 interface AppContext {
     phase: string;
-    app: Application;
+    app: Express;
     env: AppEnv;
 }
 
@@ -40,6 +40,20 @@ const steps: StepFunction[] = [
      */
     async (context: AppContext) => {
         await InitializeDatabase();
+        winston.info('Initialize Database Successfully.');
+    },
+
+    /**
+     * Express App, Http Server 생성 및 라우터 초기화.
+     */
+    async (context: AppContext) => {
+        const { createExpressApp } = await import('./interfaces/server/expressApp');
+        context.app = createExpressApp();
+
+        const { createHttpServer } = await import('./interfaces/server/httpServer');
+        const httpServer = createHttpServer(context.app);
+
+        httpServer.listen(4000, () => winston.info('Server listening on port 4000'));
     },
 
     /**
