@@ -1,8 +1,7 @@
-import express, {Express, Request, Response, NextFunction, ErrorRequestHandler} from 'express';
+import express, { Express, Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import winston from "winston";
 
 
 export function createExpressApp(): Express {

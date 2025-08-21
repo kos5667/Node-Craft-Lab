@@ -47,14 +47,17 @@ const steps: StepFunction[] = [
      * Express App, Http Server 생성 및 라우터 초기화.
      */
     async (context: AppContext) => {
-        const { createExpressApp } = await import('./interfaces/server/expressApp');
+        const { createExpressApp } = await import('./interfaces/server/ExpressApp');
         context.app = createExpressApp();
 
-        const { createHttpServer } = await import('./interfaces/server/httpServer');
+        const { createHttpServer } = await import('./interfaces/server/HttpServer');
+        const { createHttpRouter } = await import('./interfaces/routes/HttpRouter');
         const httpServer = createHttpServer(context.app);
+        context.app.use(createHttpRouter());
 
-        const { errorHandler } = await import('./interfaces/server/HttpErrorHandler')
-        context.app.use(errorHandler);
+        const { httpErrorHandler, notFoundHandler } = await import('./interfaces/server/HttpErrorHandler')
+        context.app.use(notFoundHandler);
+        context.app.use(httpErrorHandler);
 
         httpServer.listen(context.env.PORT, () => winston.info(`Server listening on port ${context.env.PORT}`));
     },

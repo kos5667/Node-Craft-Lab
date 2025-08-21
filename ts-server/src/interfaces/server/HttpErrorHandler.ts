@@ -2,12 +2,9 @@ import {Request, Response, NextFunction, ErrorRequestHandler} from 'express';
 import winston from "winston";
 
 export class NotFoundError extends Error {
-    private readonly code: any;
-
-    constructor(message = 'apis not found', code: any) {
+    constructor(message = 'apis not found') {
         super(message);
         this.name = 'NotFoundError';
-        this.code = code
     }
 }
 
@@ -18,8 +15,20 @@ export class BadRequestError extends Error {
     }
 }
 
-export const errorHandler: ErrorRequestHandler = async (err: any, req: Request, res: Response, next: NextFunction) =>  {
+export class ValidationError extends Error {
+    constructor(message = 'ValidationError') {
+        super(message);
+        this.name = 'ValidationError';
+    }
+}
+
+export const notFoundHandler = (req: Request, res: Response, next: NextFunction) => {
+    next(new NotFoundError(`Route ${req.method} "${req.originalUrl}" not found`));
+}
+
+export const httpErrorHandler: ErrorRequestHandler = async (err: any, req: Request, res: Response, next: NextFunction) =>  {
     winston.error(`====> ${req.method} ${req.originalUrl}, error: ${err.name}`);
+
     if (err.name === 'NotFoundError') {
         return res.status(404).json({ code: 'NOT_FOUND', message: err.message });
     }
