@@ -16,6 +16,10 @@ export function createExpressApp(): Express {
     app.use((req: Request, res: Response, next: NextFunction) => {
         next();
     });
+
+    app.get("/", (req: Request, res: Response) => {
+        res.send("Hello World!");
+    })
     return app
 }
 
