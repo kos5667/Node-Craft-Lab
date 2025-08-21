@@ -4,7 +4,7 @@
 import winston, { format, transports } from 'winston';
 const { combine, timestamp, printf, colorize, errors } = format;
 
-export async function InitializeLogger(_level: string): Promise<void> {
+export async function InitializeLogger(_level: string = 'debug'): Promise<void> {
     winston.configure({
         level: _level ?? 'debug',
         format: combine(
