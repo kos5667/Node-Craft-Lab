@@ -12,23 +12,7 @@ export function createExpressApp(): Express {
     app.use(cookieParser());
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
-    app.use(errorHandler)
-    app.use((req: Request, res: Response, next: NextFunction) => {
-        next();
-    });
 
-    app.get("/", (req: Request, res: Response) => {
-        res.send("Hello World!");
-    })
+    app.get("/", (req: Request, res: Response) => { res.send("Hello World!"); })
     return app
 }
-
-const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-    winston.error(`${req.method} ${req.originalUrl}, error: ${err}`);
-
-    res.status(500).json({
-        message: 'Internal Server Error',
-        code: '500',
-        error: err
-    });
-};

@@ -53,6 +53,9 @@ const steps: StepFunction[] = [
         const { createHttpServer } = await import('./interfaces/server/httpServer');
         const httpServer = createHttpServer(context.app);
 
+        const { errorHandler } = await import('./interfaces/server/HttpErrorHandler')
+        context.app.use(errorHandler);
+
         httpServer.listen(context.env.PORT, () => winston.info(`Server listening on port ${context.env.PORT}`));
     },
 
